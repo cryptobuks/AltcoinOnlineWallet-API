@@ -1,3 +1,4 @@
 *.config
 *.gitingnore
 node_modules
+config.json
