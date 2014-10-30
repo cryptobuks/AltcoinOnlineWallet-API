@@ -10,9 +10,8 @@ var c = new Coin(config.daemons[0]);
 
 c.init();
 
-c.request("getnewaddress",[''], function(err, data, data1){
+c.request("getnewaddress",[''], function(data){
 
     console.log(data)
 });
 
-console.log(config.daemons[0]);

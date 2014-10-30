@@ -20,7 +20,9 @@
         "url": "https://github.com/AKIo0O/AltcoinOnlineWallet.git"
     },
     "dependencies": {
-        "async": "*"
+        "async": "*",
+        "dateformat": "*",
+        "colors": "*"
     },
     "engines": {
         "node": ">=0.10"
