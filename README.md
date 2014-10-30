@@ -1,0 +1,4 @@
+AltcoinOnlineWallet
+===================
+
+o(╯□╰)o
