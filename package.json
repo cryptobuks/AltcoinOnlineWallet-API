@@ -1,0 +1,28 @@
+{
+    "name": "AltcoinOnlineWallet",
+    "version": "0.0.1",
+    "description": "",
+    "keywords": [
+        "wallet"
+    ],
+    "homepage": "https://github.com/AKIo0O/AltcoinOnlineWallet",
+    "bugs": {
+        "url": "https://github.com/AKIo0O/AltcoinOnlineWallet/issues"
+    },
+    "license": "GPL-2.0",
+    "author": "AKI",
+    "contributors": [
+    ],
+    "main": "start.js",
+    
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/AKIo0O/AltcoinOnlineWallet.git"
+    },
+    "dependencies": {
+        "async": "*"
+    },
+    "engines": {
+        "node": ">=0.10"
+    }
+}

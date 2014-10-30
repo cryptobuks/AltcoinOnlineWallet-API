@@ -1,0 +1,3 @@
+*.config
+*.gitingnore
+node_modules

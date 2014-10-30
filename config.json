@@ -1,0 +1,18 @@
+
+{
+    "daemons":[
+        {
+            "host": "127.0.0.1",
+            "name": "bitmark",
+            "symbol": "BTM",
+            "user": "testrpc",
+            "password": "G3Bg4PATqdj287Ksnghoybmp7NnhduGkHZNWcbtNNcnJ"
+        }
+    ]
+}
+
+
+
+
+
+
