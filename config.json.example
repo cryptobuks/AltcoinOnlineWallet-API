@@ -1,0 +1,24 @@
+
+{
+    "daemons":[
+        {
+            "host": "10.185.48.57",
+            "port": "10021",
+            "name": "bitmark",
+            "symbol": "BTM",
+            "user": "xxxxx",
+            "password": "bbgztgyt9knwUyfsKagyocYtYa9xgZwRVJ5"
+        }
+    ],
+
+    "allows":[
+        "getinfo",
+        "getnewaddress"
+    ]
+}
+
+
+
+
+
+
