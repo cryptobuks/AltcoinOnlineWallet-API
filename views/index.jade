@@ -1,0 +1,37 @@
+doctype html
+html(ng-app="altcoinwallet")
+    head
+        script(src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.0/angular.min.js")
+        script(src="/js/clip.js")
+        script(src="/js/controller.js")
+        link(rel="stylesheet", type="text/css", href="/css/style.css")
+    body(ng-controller="wallet", style="background-color:rgb(46,49,50)")
+        .nav
+        .main
+            .wallet(ng-repeat="(key, phone) in phones")
+                .header(ng-click="phone.show = !phone.show",ng-value="key")
+                    h3 {{key}}
+                    span.balance {{phone.balance}}
+                .body(ng-show="phone.show")
+                        .leftpanel
+                            .item
+                                label Receive: 
+                                span.recieve(clip-copy="phone.address",ng-click="copy") {{phone.address}}
+                            .item
+                                label Pay To:
+                                input.address(type="text",ng-model="address",placeholder="Address")
+                            .item
+                                label Amount:
+                                input.amount(type="text",ng-model="amount",placeholder="Amount")
+                            .item
+                                input.send(type="button",value="Send",ng-click="send(address,amount,key)")
+                            .item
+                                label 
+                                span {{phone.tip}}
+                        .rightpanel
+                            h4 Recent transactions
+                            ul
+                                li(ng-repeat="aki in phone.transactions",class="tx {{aki.confirmations==0?'unconfirm':''}}")
+                                    span.transamount {{aki.category == "send" ? "" : "+"}}{{aki.amount}}
+                                    a.txid(href="#") {{aki.txid}}
+            .addwallet Add New Wallet
