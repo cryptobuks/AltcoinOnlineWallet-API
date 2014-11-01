@@ -8,15 +8,15 @@ html(ng-app="altcoinwallet")
     body(ng-controller="wallet", style="background-color:rgb(46,49,50)")
         .nav
         .main
-            .wallet(ng-repeat="(key, phone) in phones")
-                .header(ng-click="phone.show = !phone.show",ng-value="key")
+            .wallet(ng-repeat="(key, wallet) in wallets")
+                .header(ng-click="wallet.show = !wallet.show",ng-value="key")
                     h3 {{key}}
-                    span.balance {{phone.balance}}
-                .body(ng-show="phone.show")
+                    span.balance {{wallet.balance}}
+                .body(ng-show="wallet.show")
                         .leftpanel
                             .item
                                 label Receive: 
-                                span.recieve(clip-copy="phone.address",ng-click="copy") {{phone.address}}
+                                span.recieve(clip-copy="wallet.address",ng-click="copy") {{wallet.address}}
                             .item
                                 label Pay To:
                                 input.address(type="text",ng-model="address",placeholder="Address")
@@ -27,11 +27,11 @@ html(ng-app="altcoinwallet")
                                 input.send(type="button",value="Send",ng-click="send(address,amount,key)")
                             .item
                                 label 
-                                span {{phone.tip}}
+                                span {{wallet.tip}}
                         .rightpanel
                             h4 Recent transactions
                             ul
-                                li(ng-repeat="aki in phone.transactions",class="tx {{aki.confirmations==0?'unconfirm':''}}")
+                                li(ng-repeat="aki in wallet.transactions",class="tx {{aki.confirmations==0?'unconfirm':''}}")
                                     span.transamount {{aki.category == "send" ? "" : "+"}}{{aki.amount}}
-                                    a.txid(href="#") {{aki.txid}}
+                                    a.txid(href="{{wallet.explorer}}/tx/{{aki.txid}}") {{aki.txid}}
             .addwallet Add New Wallet
