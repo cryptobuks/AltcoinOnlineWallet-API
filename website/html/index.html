@@ -1,0 +1,65 @@
+
+<!doctype html>
+    <html ng-app="altcoinwallet">
+        <head>
+            <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.0/angular.min.js"></script>
+            <script src="/clip.js"></script>
+            <script src="/controller.js"></script>
+            <link rel="stylesheet" type="text/css" href="/css/style.css">
+        </head>
+    <body ng-controller="wallet" style="background-color:rgb(46,49,50)">
+
+        <div class="nav"></div>
+
+        <div class="main">
+            <div class="wallet" ng-repeat="(key, phone) in phones" >
+                <div class="header" ng-click="phone.show = !phone.show" ng-value="key">
+                    <h3>{{key}}</h3>
+                    <span class="balance">{{phone.balance}}</span>
+                    <span class="recieve" clip-copy="phone.address">{{phone.address}}</span>
+                </div>
+                <div class="body {{phone.show?'':'undis'}}" >
+                    <div class="leftpanel">
+                        <div class="item">
+                            <label>Pay To:</label><input type="text" class="address" placeholder="Address">
+                        </div>
+                        <div class="item">
+                            <label>Amount:</label><input type="text" class="amount" placeholder="Amount">
+                        </div>
+                        <div class="item">
+                            <input type="button" value="Send" class="send">
+                        </div>
+                    </div>
+                    <div class="rightpanel">
+                        <h4>Recent transactions</h4>
+                        <ul>
+                            <li ng-repeat="aki in phone.transactions" class="tx {{aki.confirmations==0?'unconfirm':''}}" >
+                                <span class="transamount">{{aki.category == "send" ? "-" : "+"}}{{aki.amount}}</span>
+                                <a href="#" class="txid">{{aki.txid}}</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="addwallet">
+                Add New Wallet
+            </div>
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </body>
+</html>
+
+

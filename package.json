@@ -22,7 +22,8 @@
     "dependencies": {
         "async": "*",
         "dateformat": "*",
-        "colors": "*"
+        "colors": "*",
+        "redis": "*"
     },
     "engines": {
         "node": ">=0.10"
