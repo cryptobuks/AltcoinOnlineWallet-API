@@ -83,8 +83,9 @@ ul,li{
 }
 
 .transamount{
-    width: 40px;
+    /*width: 140px;*/
     display: inline-block;
+    margin-left: 10px;
 }
 
 .wallet .body{
@@ -167,8 +168,7 @@ ul,li{
 
 .txid{
     display: inline-block;
-    width: 380px;
-    margin-left: 10px;
+    text-decoration: none;
 }
 
 

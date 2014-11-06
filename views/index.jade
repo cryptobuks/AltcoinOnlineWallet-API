@@ -32,6 +32,6 @@ html(ng-app="altcoinwallet")
                             h4 Recent transactions
                             ul
                                 li(ng-repeat="aki in wallet.transactions",class="tx {{aki.confirmations==0?'unconfirm':''}}")
+                                    a.txid(href="{{wallet.explorer}}/tx/{{aki.txid}}") {{aki.address}}
                                     span.transamount {{aki.category == "send" ? "" : "+"}}{{aki.amount}}
-                                    a.txid(href="{{wallet.explorer}}/tx/{{aki.txid}}") {{aki.txid}}
             .addwallet Add New Wallet
