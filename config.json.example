@@ -1,6 +1,15 @@
 
 {
-    "daemons":[
+    
+    "logColors": true,
+    "logLevel": 3,
+
+    "session": ["/", "/wallet", "/send"],
+
+    "sessioncode": "xx",
+
+
+    "daemons":[ // rpc config
         {
             "host": "127.0.0.1",
             "port": "8888",
